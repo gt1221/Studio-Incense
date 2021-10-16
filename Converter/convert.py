@@ -4,9 +4,11 @@ import numpy as np
 from matplotlib import pyplot as plt
 from PIL import Image, ImageDraw
 
+#path is      /Users/genkitakasaki1/Desktop/git/Studio-Incense/Studio-Incense
+
 def Mask(x1, y1, x2, y2, height, width):
 
-    result_path = r"/Users/genkitakasaki1/Desktop/Python/App2/converter/pic/result/mask.png"
+    result_path = r"/Users/genkitakasaki1/Desktop/git/Studio-Incense/Studio-Incense/converter/pic/result/mask.png"
 
     imgMask = np.zeros((height, width), np.uint8)
 
@@ -75,12 +77,12 @@ def Show(image):
     mask = cv2.imread(result_path, 0)
     new = cv2.imread(image)
     dst = cv2.inpaint(new, mask, 3, cv2.INPAINT_TELEA)
-    cv2.imwrite(r"/Users/genkitakasaki1/Desktop/Python/App2/converter/pic/result/kekka.png", dst)
+    cv2.imwrite(r"/Users/genkitakasaki1/Desktop/git/Studio-Incense/Studio-Incense/converter/pic/result/kekka.png", dst)
 
 
     cv2.imshow("img", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-path = r"/Users/genkitakasaki1/Desktop/Python/App2/converter/pic/kasuga.JPG"
+path = r"/Users/genkitakasaki1/Desktop/git/Studio-Incense/Studio-Incense/converter/pic/kasuga.JPG"
 Show(path)
