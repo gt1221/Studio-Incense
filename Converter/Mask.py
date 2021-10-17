@@ -14,8 +14,14 @@ def printCoor(event,x,y,flags,param):
 
 def Mask():
     ano = img.copy()
-    cv2.rectangle(ano, (list_x[0], list_y[0]), (list_x[1], list_y[1]), 
-                  (0, 0, 0), thickness=-1)
+    i = 0
+    while True:
+        if not(i == len(list_x)): 
+            cv2.rectangle(ano, (list_x[i], list_y[i]), (list_x[i+1], list_y[i+1]), 
+                          (0, 0, 0), thickness=-1)
+            i = i + 2
+        else:
+            break
     cv2.imwrite(r"/Users/genkitakasaki1/Desktop/git/Studio-Incense/Studio-Incense/converter/pic/ano2.png", ano)
 
 
